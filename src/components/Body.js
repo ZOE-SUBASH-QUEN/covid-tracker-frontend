@@ -6,15 +6,28 @@ import { Table } from 'react-bootstrap'
 
 export default function Body() {
     const [data, setData] = useState([]);
+    const [selectedState, setSelectedState] = useState({});
+    const [displayCharts, setDisplayCharts] = useState(false)
 
     useEffect(() => {
         getDataFromAxios();
     }, [])
 
     const getDataFromAxios = async () => {
-        const dataFromAxios = await axios.get(`https://api.covidactnow.org/v2/states.json?apiKey=7e4ef6ff1fd14e18870ce8aeabb02154`).then(
+        const dataFromAxios = await axios.get(`https://api.covidactnow.org/v2/states.json?apiKey=${process.env.REACT_APP_COVID_ACT_NOW_KEY}`).then(
             result => { setData(result.data); console.log(result.data) }
         )
+    }
+
+    const handleRowClick = (key) => {
+        const state = data.filter(obj => obj.state === key);
+        setSelectedState(state)
+        setDisplayCharts(true)
+    }
+    const giveChartData = () => {
+        console.log("chart data: ", selectedState)
+        
+                   
     }
 
 
@@ -23,8 +36,10 @@ export default function Body() {
             <h2>Body . js</h2>
             <p>Here we will have main data, axios call, etc. </p>
             <p>table to display all data here</p>
+            {displayCharts && <h2 style={{ position: "absolute", top: "150px" }}>Charts</h2>}
+            {displayCharts && giveChartData()}
 
-            <Table striped bordered hover>
+            <Table striped bordered hover size="sm">
                 <thead>
                     <tr>
                         <th>State</th>
@@ -38,7 +53,7 @@ export default function Body() {
                 </thead>
                 <tbody>
                     {data.map(obj => {
-                         return (<tr id={obj.state} onClick={() => console.log(obj.state)}>
+                        return (<tr id={obj.state} onClick={() => handleRowClick(obj.state)}>
                             <td>{obj.state}</td>
                             <td>{obj.population}</td>
                             <td>{obj.actuals.newCases}</td>
@@ -50,6 +65,9 @@ export default function Body() {
                     })}
                 </tbody>
             </Table>
+
+
+
         </div>
     )
 }
