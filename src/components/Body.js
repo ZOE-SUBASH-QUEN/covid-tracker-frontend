@@ -3,11 +3,12 @@ import Line from './LineGraph'
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Table } from "react-bootstrap";
+
 import CovidFirstImage from "../images/covid19.image.jpeg";
 import ChartistGraph from 'react-chartist';
 import Chartist from 'chartist'
 export default function Body() {
-
+//test
     const [data, setData] = useState([]);
     const [selectedState, setSelectedState] = useState({});
     const [displayCharts, setDisplayCharts] = useState(false);
@@ -47,11 +48,13 @@ export default function Body() {
         )
     }
 
+
     const handleRowClick = (key) => {
         const state = data.filter(obj => obj.state === key);
         setSelectedState(state, giveChartData());
 
     }
+
 
     const giveChartData = () => {
 
@@ -90,6 +93,7 @@ export default function Body() {
     const handleImageClick = () => {
         alert("image clicked");
     };
+
 
     return (
         <div>
@@ -179,6 +183,7 @@ export default function Body() {
                 </>
 
             }
+
         </div>
     );
 }

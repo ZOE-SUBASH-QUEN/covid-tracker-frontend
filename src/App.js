@@ -7,8 +7,10 @@ require("dotenv").config();
 function App() {
   const title = `COVID-19 Tracker`;
   return (
+    
     <div className="App">
       <Header title={title} />
+      
       <Body />
     </div>
   );
