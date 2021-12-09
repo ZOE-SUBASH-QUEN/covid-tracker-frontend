@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+.tracker-table {
+  width: 80%;
+  height: 400px;
+  overflow: auto;
+  margin: auto;
+}
+
+.tracker-table tr {
+  cursor: pointer;
+}
+
+.image-nav {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image-nav img {
+  width: 100px;
+  height: 100px;
+  animation: App-logo-spin infinite 20s linear;
+}
