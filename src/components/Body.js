@@ -11,11 +11,18 @@ export default function Body() {
 
     useEffect(() => {
         getDataFromAxios();
+        getTimeSeriesData();
     }, [])
 
     const getDataFromAxios = async () => {
         const dataFromAxios = await axios.get(`https://api.covidactnow.org/v2/states.json?apiKey=${process.env.REACT_APP_COVID_ACT_NOW_KEY}`).then(
-            result => { setData(result.data); console.log(result.data) }
+            result => { setData(result.data)}
+        )
+    }
+
+    const getTimeSeriesData = async () => {
+        const dataFromAxios = await axios.get(`https://api.covidactnow.org/v2/states.timeseries.json?apiKey=${process.env.REACT_APP_COVID_ACT_NOW_KEY}`).then(
+            result => console.log(result)
         )
     }
 
@@ -26,8 +33,7 @@ export default function Body() {
     }
     const giveChartData = () => {
         console.log("chart data: ", selectedState)
-        
-                   
+             
     }
 
 
