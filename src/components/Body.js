@@ -6,7 +6,7 @@ import { Table } from "react-bootstrap";
 import CovidFirstImage from "../images/covid19.image.jpeg";
 
 export default function Body() {
-
+//test
     const [data, setData] = useState([]);
     const [selectedState, setSelectedState] = useState({});
     const [displayCharts, setDisplayCharts] = useState(false)
