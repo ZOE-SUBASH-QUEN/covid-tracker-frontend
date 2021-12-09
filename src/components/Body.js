@@ -2,10 +2,11 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Table } from "react-bootstrap";
+
 import CovidFirstImage from "../images/covid19.image.jpeg";
 
 export default function Body() {
-
+//test
     const [data, setData] = useState([]);
     const [selectedState, setSelectedState] = useState({});
     const [displayCharts, setDisplayCharts] = useState(false)
@@ -27,27 +28,14 @@ export default function Body() {
         )
     }
 
-    const handleRowClick = (key) => {
-        const state = data.filter(obj => obj.state === key);
-        setSelectedState(state)
-        setDisplayCharts(true)
-    }
+
     const giveChartData = () => {
         console.log("chart data: ", selectedState)
              
     }
 
 
-  const getDataFromAxios = async () => {
-    const dataFromAxios = await axios
-      .get(
-        `https://api.covidactnow.org/v2/states.json?apiKey=${process.env.REACT_APP_COVID_ACT_NOW_KEY}`
-      )
-      .then((result) => {
-        setData(result.data);
-        console.log(result.data);
-      });
-  };
+
 
   const handleRowClick = (key) => {
     const state = data.filter((obj) => obj.state === key);
@@ -55,9 +43,7 @@ export default function Body() {
     setSelectedState(state[0]);
     setDisplayCharts(true);
   };
-  const giveChartData = () => {
-    console.log("chart data: ", selectedState);
-  };
+
 
   const handleImageClick = () => {
     alert("image clicked");
