@@ -1,13 +1,16 @@
 import React from 'react'
 import covid19logo from "../images/covid-19logo.gif";
-import { Nav} from "react-bootstrap";
+import {Nav} from "react-bootstrap";
+import {Link} from "react-router-dom";
+import { Component} from 'react';
+
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 
 
 export default function Header({title}) {
     return (
         <header>
-
-        
         <img
             src={covid19logo}
             alt="Second Covid 19">
@@ -15,16 +18,16 @@ export default function Header({title}) {
 
         <Nav className="justify-content-center" activeKey="/home">
     <Nav.Item>
-      <Nav.Link href="/home">Home</Nav.Link>
+      <Nav.Link href="/">Home</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link eventKey="link-1">About</Nav.Link>
+      <Nav.Link href="/about">About</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link eventKey="link-2">Pandemic Resources & Information</Nav.Link>
+      <Nav.Link href="/info">Pandemic Resources & Information</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link eventKey="link-3">Contact us</Nav.Link>
+      <Nav.Link href="/contactUs">Contact us</Nav.Link>
     </Nav.Item>
   </Nav>
 
