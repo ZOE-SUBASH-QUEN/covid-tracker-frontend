@@ -62,6 +62,7 @@
   animation: App-logo-spin infinite 20s linear;
 }
 
+<<<<<<< HEAD
 nav{
   display: flex;
   justify-content: space-around;
@@ -95,3 +96,28 @@ svg {
   margin-left:25%;
 }
 
+=======
+/* ----  STYLING FOR CHARTIST ---- */
+.ct-series-a .ct-line {
+  /* Set the colour of this series line */
+  stroke: green;
+  /* Control the thikness of your lines */
+  stroke-width: 2px;
+  /* Create a dashed line with a pattern */
+  stroke-dasharray: 10px 20px;
+}
+
+.ct-series-a .ct-point {
+  /* Colour of your points */
+  stroke: blue;
+  /* Size of your points */
+  stroke-width: 4px;
+  /* Make your points appear as squares */
+  stroke-linecap: square;
+}
+
+
+#chart1, #chart2, #chart3, #chart4{
+  background-color: #a9bcd0;
+}
+>>>>>>> fda06d5712626f76e6f84d2d95bee7cc608743de
