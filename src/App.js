@@ -1,6 +1,7 @@
 import "./App.css";
 import Body from "./components/Body";
 import Header from "./components/Header";
+import Footer from "./components/Footer"
 
 require("dotenv").config();
 
@@ -12,6 +13,7 @@ function App() {
       <Header title={title} />
       
       <Body />
+      <Footer />
     </div>
   );
 }
