@@ -12,15 +12,19 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 =======
 >>>>>>> fda06d5712626f76e6f84d2d95bee7cc608743de
 
+
 require("dotenv").config();
 
 function App() {
-  const title = `COVID-19 Tracker`;
+  
   return (
     
     <div className="App">
+<<<<<<< HEAD
     
       <Header title={title} />
+=======
+>>>>>>> ce7019027f0789e08eaffdb7603b5d61fcc2b5aa
       
       
       <Router>
