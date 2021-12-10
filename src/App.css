@@ -94,11 +94,13 @@ table thead {
   stroke-linecap: square;
 }
 
+
 #chart1,
 #chart2,
 #chart3,
 #chart4 {
   background-color: #a9bcd0;
+
 }
 
 footer {
