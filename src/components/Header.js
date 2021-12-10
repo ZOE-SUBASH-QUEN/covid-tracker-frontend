@@ -1,14 +1,19 @@
-import React from 'react'
+import React from "react";
 import covid19logo from "../images/covid-19logo.gif";
 import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Component } from 'react';
+import { Component } from "react";
 import LoginButton from './LoginButton';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 import LogoutButton from './LogoutButton';
 
 
+
+export default function Header({ title }) {
+  return (
+    <header>
+      <img src={covid19logo} alt="Second Covid 19"></img>
 
 export default function Header( { handleSetUsersFavorites }) {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -40,4 +45,5 @@ export default function Header( { handleSetUsersFavorites }) {
 
     </header>
   )
+
 }
