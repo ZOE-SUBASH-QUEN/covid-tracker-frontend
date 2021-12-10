@@ -61,3 +61,37 @@
   height: 100px;
   animation: App-logo-spin infinite 20s linear;
 }
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  
+  align-items: center;
+  min-height:10vh;
+  background-color: rgb(73,79,82);
+  color:white;
+
+}
+
+.nav-links{
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+path {
+  pointer-events: all;
+}
+
+svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#contact-form{
+  width: 50%;
+  margin-left:25%;
+}
+
