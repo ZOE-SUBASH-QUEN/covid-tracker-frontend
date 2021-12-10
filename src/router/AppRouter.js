@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "../App";
 import About from "../pages/About";
 import ContactUs from "../pages/ContactUs";
-import Info from "../pages/Info";
+import Info from "../pages/info";
 
 const AppRouter = () => {
   return (
