@@ -2,14 +2,15 @@ import "./App.css";
 import Body from "./components/Body";
 import Header from "./components/Header";
 
-import About from "./About";
-import ContactUs from ".ContactUs";
-import Info from "./info";
+import About from "./pages/About";
+import ContactUs from "./pages/ContactUs";
+import Info from "./pages/Info";
 
 
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route, Switch} from "react-router-dom";
 
 import Footer from "./components/Footer"
+// import Switch from "react-bootstrap/esm/Switch";
 
 
 
@@ -23,13 +24,13 @@ function App() {
       
       
       <Router>
-        <Routes>
+        <Switch>
           <Route path="/about" element={<About />} />
           <Route path="/contactus" element={<ContactUs />}/>
           <Route path="/info" element={<Info />}/>
         
           <Route path = "/" element={<Body /> }/>
-      </Routes>
+      </Switch>
       </Router>
      
       
