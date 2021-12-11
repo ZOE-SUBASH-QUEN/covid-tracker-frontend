@@ -10,6 +10,21 @@ import Chartist from 'chartist'
 import { useAuth0 } from '@auth0/auth0-react';
 import TrackedLocationsAccordion from "./TrackedLocationsAccordion";
 
+// Hook is a features that let use state without using class
+//When using hooks we get the previous value of props or state
+// function usePrevious(value) {
+//   // The ref object is a generic container whose current property is mutable ...
+//   // ... and can hold any value, similar to an instance property on a class
+//   //useRef returns a mutable ref object.
+//   const ref = useRef();
+//   // Store current value in ref
+//   useEffect(() => {
+//     ref.current = value;
+//   }, [value]); // Only re-run if value changes
+//   // Return previous value (happens before update in useEffect above)
+//   return ref.current;
+// }
+
 export default function Body() {
     //state!
     const [data, setData] = useState([]);
@@ -35,12 +50,17 @@ export default function Body() {
             showLabel: true,
         }
     };
-
+  
+    // const isChanged = !_.isEqual(prevSelectedState, selectedState);
+  
     useEffect(() => {
         
         getDataFromAxios();
         getTimeSeriesData();
         // getUsersFavorites();
+      if (selectedState && selectedState[0]) {
+      giveChartData();
+    }
 
     }, [])
 
@@ -232,4 +252,5 @@ export default function Body() {
             </div>
         </>
     );
+
 }
