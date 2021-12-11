@@ -75,6 +75,41 @@ table thead {
   animation: App-logo-spin infinite 20s linear;
 }
 
+<<<<<<< HEAD
+nav{
+  display: flex;
+  justify-content: space-around;
+  
+  align-items: center;
+  min-height:10vh;
+  background-color: rgb(73,79,82);
+  color:white;
+
+}
+
+.nav-links{
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+path {
+  pointer-events: all;
+}
+
+svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#contact-form{
+  width: 50%;
+  margin-left:25%;
+}
+
+=======
 /* ----  STYLING FOR CHARTIST ---- */
 .ct-series-a .ct-line {
   /* Set the colour of this series line */
@@ -117,3 +152,4 @@ footer li {
   margin: 20px;
 
 }
+>>>>>>> fda06d5712626f76e6f84d2d95bee7cc608743de
