@@ -48,6 +48,19 @@
   cursor: pointer;
 }
 
+table thead {
+  background: #fff;
+}
+
+table thead {
+  position: sticky;
+}
+
+table thead {
+  inset-block-start: 0;
+}
+
+
 .image-nav {
   width: 80%;
   margin: auto;
@@ -60,4 +73,82 @@
   width: 100px;
   height: 100px;
   animation: App-logo-spin infinite 20s linear;
+}
+
+<<<<<<< HEAD
+nav{
+  display: flex;
+  justify-content: space-around;
+  
+  align-items: center;
+  min-height:10vh;
+  background-color: rgb(73,79,82);
+  color:white;
+
+}
+
+.nav-links{
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+path {
+  pointer-events: all;
+}
+
+svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#contact-form{
+  width: 50%;
+  margin-left:25%;
+}
+
+=======
+/* ----  STYLING FOR CHARTIST ---- */
+.ct-series-a .ct-line {
+  /* Set the colour of this series line */
+  stroke: green;
+  /* Control the thikness of your lines */
+  stroke-width: 2px;
+  /* Create a dashed line with a pattern */
+  stroke-dasharray: 10px 20px;
+}
+
+.ct-series-a .ct-point {
+  /* Colour of your points */
+  stroke: blue;
+  /* Size of your points */
+  stroke-width: 4px;
+  /* Make your points appear as squares */
+  stroke-linecap: square;
+}
+
+
+#chart1,
+#chart2,
+#chart3,
+#chart4 {
+  background-color: #a9bcd0;
+
+}
+
+footer {
+  padding: 20px;
+  margin: 20px;
+  background-color: #182334;
+  color: #fff;
+}
+
+footer li {
+  list-style: none;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+
 }
