@@ -9,12 +9,6 @@ import { useAuth0 } from '@auth0/auth0-react';
 import LogoutButton from './LogoutButton';
 
 
-
-export default function Header({ title }) {
-  return (
-    <header>
-      <img src={covid19logo} alt="Second Covid 19"></img>
-
 export default function Header( { handleSetUsersFavorites }) {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const title = `COVID-19 Tracker`;
