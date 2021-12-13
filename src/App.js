@@ -22,19 +22,6 @@ function App() {
     
     <div className="App">
       
-      
-      <Router>
-        <Switch>
-          <Route path="/about" element={<About />} />
-          <Route path="/contactus" element={<ContactUs />}/>
-          <Route path="/info" element={<Info />}/>
-        
-          <Route path = "/" element={<Body /> }/>
-      </Switch>
-      </Router>
-     
-      
-     
       <Body />
       <Footer />
     </div>
