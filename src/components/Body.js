@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import _ from 'lodash';
 import { Table, Button, Tab, Tabs, Container, Card } from "react-bootstrap";
-import CovidFirstImage from "../images/covid19.image.jpeg";
+//import CovidFirstImage from "../images/covid-image.png";
 import Chartist from 'chartist'
 import { useAuth0 } from '@auth0/auth0-react';
 import TrackedLocationsAccordion from "./TrackedLocationsAccordion";
@@ -176,20 +176,12 @@ export default function Body() {
             <div>
                 {displayCharts && (
                     <div className="image-nav">
-                        <img
-                            src={CovidFirstImage}
-                            alt="First Covid 19"
-                        />
                         <Card>
                             <div className= "top-info">State: {selectedState[0].state}</div>
                             <div>Population: {selectedState[0].population}</div>
                             <div>New Cases: {selectedState[0].actuals.newCases}</div>
                             <div>Risk Levels: {selectedState[0].riskLevels?.overall}</div>
                         </Card>
-                        <img
-                            src={CovidFirstImage}
-                            alt="Second Covid 19"
-                        />
                     </div>
                 )}
                 <div className="main-content">
@@ -199,30 +191,15 @@ export default function Body() {
                                     <div id="chart1" className="chart-graph" >
                                         <h2>Infection Rate By Day</h2>
                                     </div>
-
-                                    <div className="image-nav-single">
-                                        <img src={CovidFirstImage} alt="First Covid 19"/>
-                                    </div>
-
                                     <div id="chart2" className="chart-graph">
                                         <h2>New Deaths By Day</h2>
                                     
                                     </div>
 
-                                    <div className="image-nav-single">
-                                        <img src={CovidFirstImage} alt="First Covid 19"/>
-                                    </div>
-
                                     <div id="chart3" className="chart-graph">
                                         <h3> Case Density </h3>
 
-                                    </div>
-
-                                    <div className="image-nav-single">
-                                        <img src={CovidFirstImage} alt="First Covid 19"/>
-                                    </div>
-
-                                    
+                                    </div>   
                                     <div id="chart4" className="chart-graph">
                                         <h3>Vaccinations Completed Ratio</h3>
                                     </div>
