@@ -5,7 +5,7 @@ import TrackButton from "./TrackButton";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import _ from 'lodash';
-import { Table, Button, Tab, Tabs, Container } from "react-bootstrap";
+import { Table, Button, Tab, Tabs, Container, Card } from "react-bootstrap";
 import CovidFirstImage from "../images/covid19.image.jpeg";
 import Chartist from 'chartist'
 import { useAuth0 } from '@auth0/auth0-react';
@@ -180,12 +180,12 @@ export default function Body() {
                             src={CovidFirstImage}
                             alt="First Covid 19"
                         />
-                        <div>
+                        <Card>
                             <div className= "top-info">State: {selectedState[0].state}</div>
                             <div>Population: {selectedState[0].population}</div>
                             <div>New Cases: {selectedState[0].actuals.newCases}</div>
                             <div>Risk Levels: {selectedState[0].riskLevels?.overall}</div>
-                        </div>
+                        </Card>
                         <img
                             src={CovidFirstImage}
                             alt="Second Covid 19"
@@ -195,10 +195,9 @@ export default function Body() {
                 <div className="main-content">
                  <div>
                     {displayCharts &&
-                                <>
+                                <div style={{ position: "absolute", overflowY: "scroll", height:"80%", width: "50vw", marginTop:"10vh"}} >
                                     <div id="chart1" className="chart-graph" >
                                         <h2>Infection Rate By Day</h2>
-                                       
                                     </div>
 
                                     <div className="image-nav-single">
@@ -227,15 +226,15 @@ export default function Body() {
                                     <div id="chart4" className="chart-graph">
                                         <h3>Vaccinations Completed Ratio</h3>
                                     </div>
-                                </>
+                                </div>
 
                             }
                     </div>
-                <Container style={{width:"700px"}} className="top-info">
+                <Container style={{width:"700px", marginRight:"10%", height:"125vh"}} className="top-info">
                     <Tabs defaultActiveKey="USA">
                         <Tab eventKey="USA" title="USA">
-                            <div className="tracker-table" style={{ width: "800px", marginTop: '100px' }}>
-                                <Table striped bordered hover responsive="sm" style={{ width: "800px", margin: "auto" }}>
+                            <div className="tracker-table" style={{ height:"75vh", width: "800px", marginTop: '10px'}}>
+                                <Table striped bordered hover responsive="sm" style={{ width: "800px", margin: "auto", marginTop:"0" }}>
                                     <thead>
                                         <tr>
                                             <th className="table-heading">State</th>
@@ -245,7 +244,7 @@ export default function Body() {
                                             <th onClick={() => handleSort('transLevel')} className="table-heading">CDC Transmission Level</th>
                                             <th onClick={() => handleSort('riskLevel')} className="table-heading">Risk Levels</th>
                                             <th className="table-heading">Test Positivity Ratio</th>
-                                            <th>&nbsp;</th>
+                                            {isAuthenticated &&<th style={{backgroundColor:"#d11948", color:"#fff"}}>Tracking</th>}
                                         </tr>
                                     </thead>
                                     <tbody>
