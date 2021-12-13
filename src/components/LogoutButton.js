@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import axios from 'axios'
 import { useAuth0 } from "@auth0/auth0-react";
+import { Button } from "react-bootstrap";
 
 const LogoutButton = ({handleSetUsersFavorites}) => {
   const { logout, user } = useAuth0();
@@ -23,9 +24,9 @@ const LogoutButton = ({handleSetUsersFavorites}) => {
 }
 
   return (
-    <button onClick={() => logout({ returnTo: window.location.origin })}>
+    <Button variant="outline-danger" onClick={() => logout({ returnTo: window.location.origin })} style={{position:"relative",left:"25%"}}>
       Log Out
-    </button>
+    </Button>
   );
 };
 

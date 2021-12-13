@@ -63,8 +63,7 @@ export default function Body() {
         
         getDataFromAxios();
         getTimeSeriesData();
-        // getUsersFavorites();
-     
+           
 
     }, []);
 
@@ -207,12 +206,12 @@ export default function Body() {
                                 <>
                                     <div id="chart1" className="chart-graph" >
                                         <h2>Infection Rate By Day</h2>
-                                        {/* <Line data={infectionRateChartData} /> */}
+                                       
                                     </div>
 
                                     <div id="chart2" className="chart-graph">
                                         <h2>New Deaths By Day</h2>
-                                        {/* <Line data = {newDeathsData} /> */}
+                                    
                                     </div>
                                     <div id="chart3" className="chart-graph">
                                         <h3> Case Density </h3>
@@ -271,7 +270,10 @@ export default function Body() {
                                 World Data
                             </Tab>
                             <Tab eventKey="tracked" title="My Tracked Locations">
-                                <TrackedLocationsAccordion usersFavorites = {usersFavorites} setUsersFavorites={setUsersFavorites}/>
+                                <TrackedLocationsAccordion 
+                                usersFavorites = {usersFavorites} 
+                                setUsersFavorites={setUsersFavorites}
+                                data = {data}/>
                             </Tab>
                     </Tabs>
                     </Container>

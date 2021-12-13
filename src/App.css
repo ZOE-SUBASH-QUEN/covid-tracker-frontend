@@ -83,14 +83,14 @@ table thead {
   animation: App-logo-spin infinite 20s linear;
 }
 
-<<<<<<< HEAD
+
 nav{
   display: flex;
   justify-content: space-around;
   
   align-items: center;
   min-height:10vh;
-  background-color: rgb(73,79,82);
+  /* background-color: rgb(73,79,82); */
   color:white;
 
 }
@@ -117,7 +117,7 @@ svg {
   margin-left:25%;
 }
 
-=======
+
 /* ----  STYLING FOR CHARTIST ---- */
 .ct-series-a .ct-line {
   /* Set the colour of this series line */
@@ -160,3 +160,4 @@ footer li {
   margin: 20px;
 
 }
+
