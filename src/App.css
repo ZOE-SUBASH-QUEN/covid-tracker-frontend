@@ -60,6 +60,14 @@ table thead {
   inset-block-start: 0;
 }
 
+.main-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chart-graph {
+  margin: 1rem;;
+}
 
 .image-nav {
   width: 80%;
