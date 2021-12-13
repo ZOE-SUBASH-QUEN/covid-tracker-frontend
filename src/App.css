@@ -105,38 +105,13 @@ table thead {
   animation: App-logo-spin infinite 20s linear;
 }
 
-.image-nav img:first-child {
-  margin-left: 0.5%;
-}
 
-.mainHeaderNav {
-  background-color: #d11948;
-  margin-bottom: 11px;
-}
-
-.mainHeaderNav a {
-  display: block;
-  padding: 17px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #fff;
-}
-
-.nav-tabs .nav-links {
-  color: #000;
-}
-
-.nav-tabs .nav-link.active {
-  color: #fff;
-  background-color: #d11948;
-}
-
-<<<<<<< HEAD nav{
+nav{
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-height:10vh;
-  background-color: rgb(73,79,82);
+  /* background-color: rgb(73,79,82); */
   color:white;
 }
 
@@ -162,7 +137,7 @@ svg {
   margin-left:25%;
 }
 
-=======
+
 /* ----  STYLING FOR CHARTIST ---- */
 .ct-series-a .ct-line {
   /* Set the colour of this series line */
@@ -211,3 +186,4 @@ footer li {
   cursor: pointer;
   margin: 20px;
 }
+
