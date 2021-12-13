@@ -1,0 +1,286 @@
+[
+    {
+    "state": "AK",
+    "covid19Site": "https://alaska-coronavirus-vaccine-outreach-alaska-dhss.hub.arcgis.com/"
+    },
+    {
+    "state": "AL",
+    "covid19Site": "https://www.alabamapublichealth.gov/index.html"
+    },
+    {
+    "state": "AR",
+    "covid19Site": "https://www.healthy.arkansas.gov/programs-services/topics/novel-coronavirus"
+    },
+    {
+    "state": "AS",
+    "notes": "American Samoa does not have a regularly updated data source. We monitor their social media, emergency declarations, and local media for updates.\n\nAs of September 18, 2020, American Samoa's total test results are drawn from our `totalTestsViral` field instead of calculated via positive+negative.",
+    "covid19Site": "https://www.americansamoa.gov/covid-19-advisories"
+    
+    },
+    {
+    "state": "AZ",
+    "notes": "Arizona combines PCR and antigen tests in the total tests figure reported on the state’s dashboard\n\nArizona regularly reviews and removes duplicate records which may occasionally result in minor decreases of cumulative figures. \n\nThe **Recovered** data point we report for Arizona reflects the number of COVID-19 patients discharged from the hospital and therefore does not represent the total number of people who have recovered from COVID-19, since many people with COVID are never hospitalized.\n\nNegative test results reported in our API and CSVs are calculated by subtracting **Confirmed cases** from **Total PCR tests (people)** in the absence of better data.\n\nOn March 1, 2021, Arizona [announced](https://twitter.com/AZDHS/status/1366405875754291212?s=20) via the official Arizona Department of Health Twitter that due to death certificate matching, Confirmed deaths increased by 1, and Probable deaths decreased by 2. As a result, Deaths (confirmed + probable) decreased by 1.\n\nOn February 22, 2021, Arizona [announced](https://twitter.com/AZDHS/status/1363869914356994054?s=20) via the Department of Health's official Twitter that no new deaths were reported. Additionally, there was a decrease of 3 deaths (confirmed and probable) due to death certificate matching.\n\nOn January 18, 2021 Arizona [announced](https://twitter.com/AZDHS/status/1351183189100867586) via the official Arizona Department of Health twitter that their reported Deaths (confirmed and probable) decreased by one due to de-duplication of the data.\n\nOn January 9, 2021, Arizona [announced](https://twitter.com/AZDHS/status/1347930259170021376?s=20) that the number of COVID-19 patients in ICU was incomplete on their COVID-19 dashboard, and we sourced Currently in ICU from the official Arizona Department of Health twitter.\n\nOn December 28, 2020, Arizona [noted](https://twitter.com/AZDHS/status/1343575976026886144) that due to the holiday weekend, multiple days of case reviews were completed, resulting in the data for December 28, 2020 being higher than usual. As a result, they reported a larger increase in Confirmed cases than Total PCR tests (people), which caused their Negative PCR tests (people), which is calculated as Total PCR tests (people) minus Confirmed cases, to decrease.\n\nAs of December 10, 2020, Arizona's total test results are drawn from our `totalTestsViral` field instead of calculated via positive+negative. We backfilled the data for March 2 2020 through December 8 2020 using the time-series posted on Arizona's dashboard as [Diagnostic Tests Conducted](https://tableau.azdhs.gov/views/ELRv2testlevelandpeopletested/TestsConducted?:isGuestRedirectFromVizportal=y&:embed=y). \n\nOn December 1, 2020, Arizona [announced](https://twitter.com/AZDHS/status/1333791978992017408) that figures reported on December 1, 2020, would be higher than normal due to a delay in case review and reported over the Thanksgiving weekend.\n\nOn October 6, 2020, the Arizona Department of Health Services [announced](https://directorsblog.health.azdhs.gov/covid-19-hospitalizations-in-arizona/?utm_source=TWITTER&utm_medium=AZDHS&utm_campaign=covid19,Director%27s+Blog&utm_content=3840149936&linkId=101333440) that they were removing cases who had been admitted to a hospital but had not been hospitalized from their total hospitalization counts. This results in a decrease of Arizona's cumulative hospitalizations.\n\nOn September 18, 2020, Arizona reported a policy change in the way they count people with positive antigen testing results to comply with CSTE case definitions. This appears to have resulted in a large increase in probable cases and also likely the reason where a decrease in confirmed cases was observed. \n\nOn September 16, 2020, Arizona added antigen testing into its main totals figure. This appears to have raised its Total Tests (PCR) number more than usual.\n\nFrom July 18–August 5, 2020, Arizona’s dashboard stopped displaying confirmed and probable breakdowns for **Cases** and **Deaths**, so we could not update **Confirmed Cases,** **Probable Cases,** **Confirmed Deaths,** or **Probable Deaths** during this period. We were still able to update the total data points for **Cases (confirmed plus probable)** and **Deaths (confirmed plus probable)**. We will backfill the separate confirmed and probable case and death data if Arizona provides historical numbers.\n\nOn June 23, 2020, we updated our historical data for **Cumulative hospitalized** to match Arizona's dashboard data for \"hospitalized by date admitted.\" Data for this metric is not typically reported until several days after admittance. Our daily updates will continue to compile Arizona’s overall number as of cumulative hospitalizations, regardless of date admitted.",
+    "covid19Site": "https://www.azdhs.gov/preparedness/epidemiology-disease-control/infectious-disease-epidemiology/covid-19/dashboards/index.php"
+    
+    },
+    {
+    "state": "CA",
+    "covid19Site": "https://covid19.ca.gov/"
+    },
+    {
+    "state": "CO",
+    "covid19Site": "https://covid19.colorado.gov/"
+    },
+    {
+    "state": "CT",
+    "covid19Site": "https://portal.ct.gov/coronavirus"
+    },
+    {
+    "state": "DC",
+    "covid19Site": "https://coronavirus.dc.gov/"
+    },
+    {
+    "state": "DE",
+    "covid19Site": "https://myhealthycommunity.dhss.delaware.gov/locations/state#testing"
+    },
+    {
+    "state": "FL",
+    "covid19Site": "https://floridahealthcovid19.gov/"
+    },
+    {
+    "state": "GA",
+    "covid19Site": "https://dph.georgia.gov/covid-19-daily-status-report"
+    },
+    {
+    "state": "GU",
+    "notes": "As of November 21, 2020, Guam’s Negative test results reported in our API and CSVs are calculated by subtracting **Confirmed cases** from **Total PCR tests (specimens)** in the absence of better data.\n\nGuam's counts include 11 people tested at the San Diego naval base.\n\nOn March 5, 2021, Guam [announced](https://ghs.guam.gov/jic-release-no-592-covid-19-related-fatalities-reviewed-and-adjusted-132nd-133rd-fatalities) that, \"the Department of Public Health and Social Services (DPHSS) Chief Medical Officer and Territorial Epidemiologist, in coordination with the Acting Chief Medical Examiner, have been conducting a review of all possible COVID-19-related deaths.\" This review has led to 2 additional reported COVID-19 related deaths.\n\nAs of December 7, 2020, Guam’s Total PCR tests (specimens), Total antigen tests (specimens), Total antibody tests (specimens) will include all specimens reported. Previously they did not include follow up testing for known cases.\n\nOn November 21, 2020, we cleared Guam’s **Total PCR tests (People)** timeseries. Prior to November 21, we had believed that Guam’s negative counts represented people. However after outreach to Guam’s health department, we learned that the negatives represented specimens (while its positives represent cases). This change means Guam’s totalTestResults represent specimens excluding repeat positive results.\n\nOn November 18, 2020, Guam [announced](https://ghs.guam.gov/jic-release-no-454-results-112-test-positive-covid-19-two-gdoe-employees-test-positive-covid-19) that “Beginning next week, the Department of Public Health and Social Services (DPHSS) will shift from daily situation reports to weekly reports in order to provide for more comprehensive data analysis. To reflect this, the Joint Information Center (JIC) will report profiles of confirmed cases on a weekly basis only.” As a result, Positive antigen tests (specimens) and Positive antibody tests (specimens) will only be updated once weekly going forward.\n\nOn September 3, 2020, Guam reported that it had shifted to using the more restrictive August 5 definition of probable cases released by the CSTE. From March 12, 2020 to September 2, 2020 Guam reported eight probable cases under the previous probable case definition. Due to the change, Guam has no cases that classify as probable cases as of September 3, 2020, and 8 cases have been removed from Guam's total case count.",
+    "covid19Site": "http://dphss.guam.gov/covid-19/",
+    "covid19SiteSecondary": "https://drive.google.com/file/d/1FVW6sNbdgyV5-CYkOorYvOGivkmOED8t/view",
+    "covid19SiteTertiary": "https://drive.google.com/file/d/1n-vrUGzEzs7rjcxXBFEbIMmeUQykuyO9/view",
+    "covid19SiteQuaternary": null,
+    "covid19SiteQuinary": null,
+    "twitter": "@guamdphss",
+    "covid19SiteOld": "https://ghs.guam.gov/coronavirus-covid-19",
+    "covidTrackingProjectPreferredTotalTestUnits": "Specimens",
+    "covidTrackingProjectPreferredTotalTestField": "posNeg",
+    "totalTestResultsField": "posNeg",
+    "pui": "All Data",
+    "pum": false,
+    "name": "Guam",
+    "fips": "66"
+    },
+    {
+    "state": "HI",
+    "covid19Site": "https://health.hawaii.gov/coronavirusdisease2019/"
+    },
+    {
+    "state": "IA",
+    "covid19Site": "https://coronavirus.iowa.gov/"
+    },
+    {
+    "state": "ID",
+    "covid19Site": "https://coronavirus.idaho.gov/"
+    },
+    {
+    "state": "IL",
+    "covid19Site": "https://dph.illinois.gov/covid19.html"
+    },
+    {
+    "state": "IN",
+    "covid19Site": "https://www.in.gov/isdh/28470.htm"
+    },
+    {
+    "state": "KS",
+    "covid19Site": "https://www.coronavirus.kdheks.gov/160/COVID-19-in-Kansas"
+    },
+    {
+    "state": "KY",
+    "covid19Site": "https://govstatus.egov.com/kycovid19"
+    },
+    {
+    "state": "LA",
+    "covid19Site": "http://ldh.la.gov/Coronavirus/"
+    },
+    {
+    "state": "MA",
+    "covid19Site": "https://www.mass.gov/covid-19-updates-and-information"
+    },
+    {
+    "state": "MD",
+    "covid19Site": "https://coronavirus.maryland.gov/"
+    },
+    {
+    "state": "ME",
+    "covid19Site": "https://www.maine.gov/dhhs/mecdc/infectious-disease/epi/airborne/coronavirus/data.shtml"
+    },
+    {
+    "state": "MI",
+    "covid19Site": "https://www.michigan.gov/coronavirus/"
+    },
+    {
+    "state": "MN",
+    "covid19Site": "https://www.health.state.mn.us/diseases/coronavirus/situation.html"
+    },
+    {
+    "state": "MO",
+    "covid19Site": "https://health.mo.gov/living/healthcondiseases/communicable/novel-coronavirus/"
+    },
+    {
+    "state": "MP",
+    "notes": "The Northern Mariana Islands have not posted a new **Recovered** number since July 15, 2020. \n\nNegative test results reported in our API and CSVs are calculated by subtracting **Confirmed cases** from **Total PCR tests (people)**.\n\nThe Northern Mariana Islands **Total PCR tests (specimens)** values decrease occasionally without explanation. We suspect this is due to some sort of data quality assurance or de-deduplication.\n\nThe Northern Mariana Islands provides irregular data updates, so changes in values often represent multiple days of data.\n\nOn July 23, 2020, we switched our **Total tests** units to the people-tested metric reported by the Northern Mariana Islands, which led to a drop in total tests. We will backfill total tests data for the territory as soon as we are able to do so.",
+    "covid19Site": "https://cnmichcc.maps.arcgis.com/apps/opsdashboard/index.html#/4061b674fc964efe84f7774b7979d2b5",
+    "covid19SiteSecondary": "https://services8.arcgis.com/zkkZCub5I6ydvXQj/ArcGIS/rest/services/Coronavirus_PublicDashboardView/FeatureServer/3/query?where=1%3D1&outStatistics=%5B%7B%27statisticType%27%3A+%27max%27%2C+%27onStatisticField%27%3A+%27reportdt%27%7D%2C+%7B%27statisticType%27%3A+%27sum%27%2C+%27onStatisticField%27%3A+%27confirmedcases%27%7D%2C+%7B%27statisticType%27%3A+%27sum%27%2C+%27onStatisticField%27%3A+%27totalspeccnmi%27%7D%2C+%7B%27statisticType%27%3A+%27sum%27%2C+%27onStatisticField%27%3A+%27deaths%27%7D%2C+%7B%27statisticType%27%3A+%27sum%27%2C+%27onStatisticField%27%3A+%27recovered%27%7D%2C+%7B%27statisticType%27%3A+%27sum%27%2C+%27onStatisticField%27%3A+%27hospitalized%27%7D%5D",
+    "covid19SiteTertiary": "https://cnmichcc.maps.arcgis.com/apps/opsdashboard/index.html#/4061b674fc964efe84f7774b7979d2b5",
+    "covid19SiteQuaternary": "https://cnmichcc.maps.arcgis.com/apps/opsdashboard/index.html#/4061b674fc964efe84f7774b7979d2b5",
+    "covid19SiteQuinary": null,
+    "twitter": "@cnmichcc",
+    "covid19SiteOld": "https://www.chcc.gov.mp/coronavirusinformation.php",
+    "covidTrackingProjectPreferredTotalTestUnits": "People",
+    "covidTrackingProjectPreferredTotalTestField": "posNeg",
+    "totalTestResultsField": "posNeg",
+    "pui": "No Data",
+    "pum": false,
+    "name": "Northern Mariana Islands",
+    "fips": "69"
+    },
+    {
+    "state": "MS",
+    "covid19Site": "https://msdh.ms.gov/msdhsite/_static/14,0,420.html"
+    },
+    {
+    "state": "MT",
+    "covid19Site": "https://montana.maps.arcgis.com/apps/MapSeries/index.html?appid=7c34f3412536439491adcc2103421d4b"
+    },
+    {
+    "state": "NC",
+    "covid19Site": "https://www.ncdhhs.gov/covid-19-case-count-nc"
+    },
+    {
+    "state": "ND",
+    "covid19Site": "https://www.health.nd.gov/diseases-conditions/coronavirus"
+    },
+    {
+    "state": "NE",
+    "covid19Site": "https://dhhs.ne.gov/Pages/Coronavirus.aspx"
+    },
+    {
+    "state": "NH",
+    "covid19Site": "https://www.covid19.nh.gov/"
+    },
+    {
+    "state": "NJ",
+    "covid19Site": "https://covid19.nj.gov/"
+    },
+    {
+    "state": "NM",
+    "covid19Site": "https://cvprovider.nmhealth.org/public-dashboard.html"
+    },
+    {
+    "state": "NV",
+    "covid19Site": "https://nvhealthresponse.nv.gov/"
+    },
+    {
+    "state": "NY",
+    "covid19Site": "https://coronavirus.health.ny.gov/home"
+    },
+    {
+    "state": "OH",
+    "covid19Site": "https://coronavirus.ohio.gov/wps/portal/gov/covid-19/dashboards/overview/"
+    },
+    {
+    "state": "OK",
+    "covid19Site": "https://oklahoma.gov/covid19.html"
+    },
+    {
+    "state": "OR",
+    "covid19Site": "https://www.oregon.gov/oha/PH/DISEASESCONDITIONS/DISEASESAZ/Pages/emerging-respiratory-infections.aspx"
+    },
+    {
+    "state": "PA",
+    "covid19Site": "https://www.pa.gov/covid/"
+    },
+    {
+    "state": "PR",
+    "notes": "Reported **Deaths** include both confirmed and probable COVID-19 deaths.\n\nOn March 7, 2021, Puerto Rico's dashboard link was broken and required a login. As a result, data will be frozen until a suitable replacement is found.\n\nPuerto Rico does not report test data on its data dashboard. Data for **Total PCR Tests (in specimens)** and **Positive PCR Tests (in specimens)** is taken from infrequent press reports. The most recent test data for Puerto Rico is taken from a [Departamento de Salud press release](https://github.com/COVID19Tracking/issues/files/5307568/Actualizacion.de.los.resultados.de.las.pruebas.moleculares.y.serologicas.para.Covid-19.registradas.en.Bioportal.del.Depto.de.Salud.pdf) from August 28, 2020. \n\nPuerto Rico’s **Recovered** numbers occasionally decrease without explanation. We suspect this is due to some sort of data quality assurance or de-deduplication.\n\nOn November 7, 2020, Puerto Rico switched from using antibody tests to antigen tests to identify probable cases in accordance with August 2020 CSTE guidelines. This caused probable cases to drop by 33,888. We cleared the history of our **Probable Cases** field to match the new definition. We also modified our **Cases (confirmed + probable)** field to remove probables identified via antibody from April 24, 2020 onward, when we have access to a breakdown.\n\nOn November 2, 2020, Puerto Rico removed 551 recoveries without explanation.\n\nOn July 7, 2020, we updated **Negative PCR tests** based on press releases from May and June.\n\nOn May 6, 2020, Puerto Rico stopped reporting **Negative PCR tests**.\n\nOn April 22, 2020, Puerto Rico's data changed due to deduplication. This resulted in a decrease in **Total cases**.",
+    "covid19Site": "https://services5.arcgis.com/klquQoHA0q9zjblu/ArcGIS/rest/services/Datos_Totales_View7/FeatureServer/0/query?where=1%3D1&outFields=T_Muertes_COVID_RD%2CT_Fatalidades%2CT_Muertes_Combinadas%2CT_Pacientes_Int_Covid%2CT_Vent_Covid%2CT_Serologicos_Pos%2CT_Casos_Unicos%2CT_Molecular_Pos%2CT_Fatalidades%2CT_Hospitalizados%2CT_Recuperados",
+    "covid19SiteSecondary": "https://bioseguridad.maps.arcgis.com/apps/opsdashboard/index.html#/3bfb64c9a91944bc8c41edd8ff27e6df",
+    "covid19SiteTertiary": "http://www.salud.gov.pr/Pages/coronavirus.aspx",
+    "covid19SiteQuaternary": "https://services5.arcgis.com/klquQoHA0q9zjblu/ArcGIS/rest/services/Datos_Totales_View7/FeatureServer/0/query?where=1%3D1&outFields=T_Muertes_COVID_RD%2CT_Muertes_Combinadas%2CT_Pacientes_Int_Covid%2CT_Vent_Covid%2CT_Serologicos_Pos%2CT_Casos_Unicos%2CT_Molecular_Pos%2CT_Fatalidades%2CT_Hospitalizados",
+    "covid19SiteQuinary": null,
+    "twitter": "@desaludpr",
+    "covid19SiteOld": "http://www.salud.gov.pr/Pages/coronavirus.aspx",
+    "covidTrackingProjectPreferredTotalTestUnits": "Specimens",
+    "covidTrackingProjectPreferredTotalTestField": "posNeg",
+    "totalTestResultsField": "posNeg",
+    "pui": "No Data",
+    "pum": false,
+    "name": "Puerto Rico",
+    "fips": "72"
+    },
+    {
+    "state": "RI",
+    "covid19Site": "https://covid.ri.gov/"
+    },
+    {
+    "state": "SC",
+    "covid19Site": "https://scdhec.gov/covid19"
+    },
+    {
+    "state": "SD",
+    "covid19Site": "https://doh.sd.gov/COVID/Dashboard.aspx"
+    },
+    {
+    "state": "TN",
+    "covid19Site": "https://www.tn.gov/health/cedep/ncov.html"
+    },
+    {
+    "state": "TX",
+    "covid19Site": "https://dshs.texas.gov/coronavirus/AdditionalData.aspx"
+    },
+    {
+    "state": "UT",
+    "covid19Site": "https://coronavirus.utah.gov/case-counts/"
+    },
+    {
+    "state": "VA",
+    "covid19Site": "https://www.vdh.virginia.gov/coronavirus/covid-19-in-virginia/"
+    },
+    {
+    "state": "VI",
+    "notes": "Total PCR tests in the Virgin Islands is the sum of **Positive PCR tests**, **Negative PCR tests**, and **Pending tests**.\n\nThe Virgin Islands provides irregular data updates, so changes in values often represent multiple days of data.",
+    "covid19Site": "https://doh.vi.gov/covid19usvi",
+    "covid19SiteSecondary": null,
+    "covid19SiteTertiary": null,
+    "covid19SiteQuaternary": null,
+    "covid19SiteQuinary": null,
+    "twitter": "@usvidoh",
+    "covid19SiteOld": "https://doh.vi.gov/",
+    "covidTrackingProjectPreferredTotalTestUnits": "People",
+    "covidTrackingProjectPreferredTotalTestField": "posNeg",
+    "totalTestResultsField": "posNeg",
+    "pui": "Positives Only",
+    "pum": false,
+    "name": "US Virgin Islands",
+    "fips": "78"
+    },
+    {
+    "state": "VT",
+    "covid19Site": "https://www.healthvermont.gov/covid-19"
+    },
+    {
+    "state": "WA",
+    "covid19Site": "https://www.doh.wa.gov/Emergencies/NovelCoronavirusOutbreak2020COVID19/DataDashboard"
+    },
+    {
+    "state": "WI",
+    "covid19Site": "https://www.dhs.wisconsin.gov/covid-19/data.htm"
+    },
+    {
+    "state": "WV",
+    "covid19Site": "https://dhhr.wv.gov/Coronavirus%20Disease-COVID-19/Pages/default.aspx"
+    },
+    {
+    "state": "WY",
+    "covid19Site": "https://health.wyo.gov/publichealth/infectious-disease-epidemiology-unit/disease/novel-coronavirus/"
+    }
+    ]

@@ -37,6 +37,19 @@
   }
 }
 
+.top-info {
+  margin-top: 10px;
+}
+
+.table-heading {
+  background-color: #d11948;
+  color: #fff;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #c0c0c0;
+}
+
 .tracker-table {
   width: 80%;
   height: 400px;
@@ -48,6 +61,27 @@
   cursor: pointer;
 }
 
+table thead {
+  background: #fff;
+}
+
+table thead {
+  position: sticky;
+}
+
+table thead {
+  inset-block-start: 0;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chart-graph {
+  margin: 1rem;;
+}
+
 .image-nav {
   width: 80%;
   margin: auto;
@@ -56,22 +90,29 @@
   align-items: center;
 }
 
-.image-nav img {
+.image-nav-single {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-nav img, 
+.image-nav-single img {
   width: 100px;
   height: 100px;
   animation: App-logo-spin infinite 20s linear;
 }
 
-<<<<<<< HEAD
+
 nav{
   display: flex;
   justify-content: space-around;
-  
   align-items: center;
   min-height:10vh;
-  background-color: rgb(73,79,82);
+  /* background-color: rgb(73,79,82); */
   color:white;
-
 }
 
 .nav-links{
@@ -96,7 +137,7 @@ svg {
   margin-left:25%;
 }
 
-=======
+
 /* ----  STYLING FOR CHARTIST ---- */
 .ct-series-a .ct-line {
   /* Set the colour of this series line */
@@ -116,8 +157,33 @@ svg {
   stroke-linecap: square;
 }
 
-
-#chart1, #chart2, #chart3, #chart4{
-  background-color: #eae2b7;
+#chart1,
+#chart2,
+#chart3,
+#chart4 {
+  background-color: #a9bcd0;
 }
->>>>>>> fda06d5712626f76e6f84d2d95bee7cc608743de
+
+footer {
+  padding: 20px;
+  margin: 20px;
+  background-color: #d11948;
+  color: #fff;
+}
+
+footer ul {
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+footer a {
+  color: #fff;
+}
+
+footer li {
+  list-style: none;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+}
+

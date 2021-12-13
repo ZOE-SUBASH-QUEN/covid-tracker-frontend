@@ -4,6 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+
+import AppRouter from "./router/AppRouter";
+
+
 import { Auth0Provider } from "@auth0/auth0-react";
 
 ReactDOM.render(
@@ -12,7 +16,7 @@ ReactDOM.render(
     clientId="SJHyipKl2ZGNbIjHkY2vWNeaSfiLStKl"
     redirectUri={window.location.origin}
   >
-    <App />
+     <AppRouter />
   </Auth0Provider>,
   document.getElementById("root")
 );

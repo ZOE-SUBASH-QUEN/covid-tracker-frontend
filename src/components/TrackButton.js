@@ -8,7 +8,7 @@ function TrackButton({ obj, tracked, setUsersFavorites, handleSetUsersFavorites 
     const { user, isAuthenticated, isLoading } = useAuth0();
 
     const handleTrackClick = async () => {
-        await axios.put(`http://localhost:3001/${user?.email}`, obj).then(result => {
+        await axios.put(`${process.env.REACT_APP_HOST_URL}/${user?.email}`, obj).then(result => {
             console.log(result)
             handleSetUsersFavorites(result.data)
 
