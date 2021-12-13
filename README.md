@@ -31,7 +31,7 @@ The Covid-19 Tracker allows users to view and track Covid related data and risk 
 
 ---
 
-Server:
+### Server:
 * node
 * express
 * mongodb
