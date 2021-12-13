@@ -5,7 +5,7 @@ import TrackButton from "./TrackButton";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import _ from 'lodash';
-import { Table, Button, Tab, Tabs, Container } from "react-bootstrap";
+import { Table, Button, Tab, Tabs, Container, Card } from "react-bootstrap";
 import CovidFirstImage from "../images/covid19.image.jpeg";
 import Chartist from 'chartist'
 import { useAuth0 } from '@auth0/auth0-react';
@@ -60,12 +60,8 @@ export default function Body() {
      const isChanged = !_.isEqual(prevSelectedState, selectedState);
   
     useEffect(() => {
-        
         getDataFromAxios();
         getTimeSeriesData();
-        // getUsersFavorites();
-     
-
     }, []);
 
     useEffect(() => {
@@ -75,7 +71,8 @@ export default function Body() {
     }, [isChanged]);
 
     const getDataFromAxios = async () => {
-        const dataFromAxios = await axios.get(`https://api.covidactnow.org/v2/states.json?apiKey=${process.env.REACT_APP_COVID_ACT_NOW_KEY}`).then(
+        const dataFromAxios = await axios
+        .get(`https://api.covidactnow.org/v2/states.json?apiKey=${process.env.REACT_APP_COVID_ACT_NOW_KEY}`).then(
             result => { setData(result.data) }
         )
     }
@@ -123,10 +120,6 @@ export default function Body() {
         setDisplayCharts(true)
 
     }
-
-    const handleImageClick = () => {
-        alert("image clicked");
-    };
 
     const handleSetUsersFavorites = (data) => {
         console.log(data.tracking)
@@ -186,60 +179,72 @@ export default function Body() {
                         <img
                             src={CovidFirstImage}
                             alt="First Covid 19"
-                            onClick={handleImageClick}
                         />
-                        <div>
-                            <div>State: {selectedState[0].state}</div>
+                        <Card>
+                            <div className= "top-info">State: {selectedState[0].state}</div>
                             <div>Population: {selectedState[0].population}</div>
                             <div>New Cases: {selectedState[0].actuals.newCases}</div>
                             <div>Risk Levels: {selectedState[0].riskLevels?.overall}</div>
-                        </div>
+                        </Card>
                         <img
                             src={CovidFirstImage}
                             alt="Second Covid 19"
-                            onClick={handleImageClick}
                         />
                     </div>
                 )}
                 <div className="main-content">
                  <div>
                     {displayCharts &&
-                                <>
+                                <div style={{ position: "absolute", overflowY: "scroll", height:"80%", width: "50vw", marginTop:"10vh"}} >
                                     <div id="chart1" className="chart-graph" >
                                         <h2>Infection Rate By Day</h2>
-                                        {/* <Line data={infectionRateChartData} /> */}
+                                    </div>
+
+                                    <div className="image-nav-single">
+                                        <img src={CovidFirstImage} alt="First Covid 19"/>
                                     </div>
 
                                     <div id="chart2" className="chart-graph">
                                         <h2>New Deaths By Day</h2>
-                                        {/* <Line data = {newDeathsData} /> */}
+                                    
                                     </div>
+
+                                    <div className="image-nav-single">
+                                        <img src={CovidFirstImage} alt="First Covid 19"/>
+                                    </div>
+
                                     <div id="chart3" className="chart-graph">
                                         <h3> Case Density </h3>
 
                                     </div>
+
+                                    <div className="image-nav-single">
+                                        <img src={CovidFirstImage} alt="First Covid 19"/>
+                                    </div>
+
+                                    
                                     <div id="chart4" className="chart-graph">
                                         <h3>Vaccinations Completed Ratio</h3>
                                     </div>
-                                </>
+                                </div>
 
                             }
                     </div>
-                <Container style={{width:"700px"}}>
+                <Container style={{width:"700px", marginRight:"10%", height:"125vh"}} className="top-info">
                     <Tabs defaultActiveKey="USA">
                         <Tab eventKey="USA" title="USA">
-                            <div className="tracker-table" style={{ width: "800px", marginTop: '100px' }}>
-                                <Table striped bordered hover responsive="sm" style={{ width: "800px", margin: "auto" }}>
+                            <div className="tracker-table" style={{ height:"75vh", width: "800px", marginTop: '10px'}}>
+                                <Table striped bordered hover responsive="sm" style={{ width: "800px", margin: "auto", marginTop:"0" }}>
                                     <thead>
                                         <tr>
-                                            <th>State</th>
-                                            <th>Population</th>
-                                            <th onClick={() => handleSort('newCases')}>New Cases</th>
-                                            <th onClick={() => handleSort('newDeaths')}>New Deaths</th>
-                                            <th onClick={() => handleSort('transLevel')}>CDC Transmission Level</th>
-                                            <th onClick={() => handleSort('riskLevel')}>Risk Levels</th>
-                                            <th>Test Positivity Ratio</th>
-                                            <th>&nbsp;</th>
+                                            <th className="table-heading">State</th>
+                                            <th className="table-heading">Population</th>
+                                            <th onClick={() => handleSort('newCases')} className="table-heading">New Cases</th>
+                                            <th onClick={() => handleSort('newDeaths')} className="table-heading">New Deaths</th>
+                                            <th onClick={() => handleSort('transLevel')} className="table-heading">CDC Transmission Level</th>
+                                            <th onClick={() => handleSort('riskLevel')} className="table-heading">Risk Levels</th>
+                                            <th className="table-heading">Test Positivity Ratio</th>
+                                            {isAuthenticated &&<th style={{backgroundColor:"#d11948", color:"#fff"}}>Tracking</th>}
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -271,7 +276,10 @@ export default function Body() {
                                 World Data
                             </Tab>
                             <Tab eventKey="tracked" title="My Tracked Locations">
-                                <TrackedLocationsAccordion usersFavorites = {usersFavorites} setUsersFavorites={setUsersFavorites}/>
+                                <TrackedLocationsAccordion 
+                                usersFavorites = {usersFavorites} 
+                                setUsersFavorites={setUsersFavorites}
+                                data = {data}/>
                             </Tab>
                     </Tabs>
                     </Container>
