@@ -1,13 +1,13 @@
 import React from "react";
 import "../App.css";
 import Header from "../components/Header";
-import aboutimg from "../images/aboutimg.jpg";
+
 
 function About() {
 
   return (
 
-    <div id="about_page" styles={{ backgroundImage:`url(${aboutimg})` }}>
+    <div id="about_page" >
       <Header />
       <h1>About this application</h1>
       <p>Hello! Welcome to Covid-19 Tracker! The application is develped by Quentin, Subash and Zoe. This Covid-19 Tracker application built using React, uses data from CovidActNow as the data source.

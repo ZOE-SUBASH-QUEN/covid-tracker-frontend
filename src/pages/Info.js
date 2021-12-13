@@ -10,6 +10,7 @@ import {
 } from "react-simple-maps";
 
 import allStates from "../data/allstates.json";
+import stateweb from "../data/stateweb.json";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
 
@@ -30,17 +31,12 @@ const offsets = {
 const Info = () => {
   const covidData = useRef();
 
-  useEffect(() => {
-    fetch("https://api.covidtracking.com/v1/states/info.json").then(resp => resp.json()).then(json => {
-      console.log(json)
-      covidData.current = json;
-    })
-  }, [])
+ 
 
   const handleStateClick = ({id, val}) => {
     console.log("state clicked", id);
 
-    const stateCovidData = covidData.current.find(stateCovidData => {
+    const stateCovidData = stateweb.find(stateCovidData => {
       if (stateCovidData.state === id) {
         return true;
       } else {
