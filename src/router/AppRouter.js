@@ -3,6 +3,7 @@ import App from "../App";
 import About from "../pages/About";
 import ContactUs from "../pages/ContactUs";
 import Info from "../pages/Info";
+import Header from "../components/Header"
 
 const AppRouter = () => {
   return (
@@ -10,8 +11,8 @@ const AppRouter = () => {
       <Switch>
         <Route path="/" exact component={App} />
         <Route path="/about" component={About} />
-        <Route path="/info" component={Info} />
-        <Route path="/contact" component={ContactUs} />
+        <Route path="/info" component={Info}/>
+        <Route path="/contactus" component={ContactUs} />
       </Switch>
     </Router>
   );

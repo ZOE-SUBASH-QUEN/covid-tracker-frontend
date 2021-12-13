@@ -1,12 +1,14 @@
 import React from "react";
 import "../App.css";
-
+import Header from "../components/Header";
+import aboutimg from "../images/aboutimg.jpg";
 
 function About() {
 
   return (
 
-    <div id="about_page">
+    <div id="about_page" styles={{ backgroundImage:`url(${aboutimg})` }}>
+      <Header />
       <h1>About this application</h1>
       <p>Hello! Welcome to Covid-19 Tracker! The application is develped by Quentin, Subash and Zoe. This Covid-19 Tracker application built using React, uses data from CovidActNow as the data source.
         The app displays key metrics around the growth of coronavirus, including the total number of population State and total number of population Country, new cases, new deaths, CDC Transmission Level, Risk Levels, and Test Positivity Ratio.

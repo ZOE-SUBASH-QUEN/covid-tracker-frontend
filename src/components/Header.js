@@ -30,7 +30,7 @@ export default function Header( { handleSetUsersFavorites }) {
           <Nav.Link href="/info">Pandemic Resources & Information</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/contactUs">Contact us</Nav.Link>
+          <Nav.Link href="/contactus">Contact us</Nav.Link>
         </Nav.Item>
       </Nav>
 

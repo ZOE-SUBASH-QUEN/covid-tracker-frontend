@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
+import Header from "../components/Header";
 import { geoCentroid } from "d3-geo";
 import {
   ComposableMap,
@@ -24,13 +25,44 @@ const offsets = {
   DC: [49, 21]
 };
 
+
+
 const Info = () => {
+  const covidData = useRef();
+
+  useEffect(() => {
+    fetch("https://api.covidtracking.com/v1/states/info.json").then(resp => resp.json()).then(json => {
+      console.log(json)
+      covidData.current = json;
+    })
+  }, [])
+
+  const handleStateClick = ({id, val}) => {
+    console.log("state clicked", id);
+
+    const stateCovidData = covidData.current.find(stateCovidData => {
+      if (stateCovidData.state === id) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    const covid19Site = stateCovidData.covid19Site;
+    console.log(stateCovidData.covid19Site);
+    window.open(covid19Site, '_blank'); // opens https://api.covidtracking.com/v1/states/info.json
+
+  }
   return (
+    
     <ComposableMap projection="geoAlbersUsa">
+      
       <Geographies geography={geoUrl}>
+      
         {({ geographies }) => (
           <>
+          
             {geographies.map(geo => (
+              
               <Geography
                 key={geo.rsmKey}
                 stroke="#FFF"
@@ -38,11 +70,12 @@ const Info = () => {
                 fill="#DDD"
               />
             ))}
+            
             {geographies.map(geo => {
               const centroid = geoCentroid(geo);
               const cur = allStates.find(s => s.val === geo.id);
               return (
-                <g key={geo.rsmKey + "-name"}>
+                <g key={geo.rsmKey + "-name"} onClick={(event) => handleStateClick(cur)}>
                   {cur &&
                     centroid[0] > -160 &&
                     centroid[0] < -67 &&

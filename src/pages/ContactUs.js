@@ -1,37 +1,27 @@
-import React from "react";
-import "../App.css";
-import { Form } from "react-bootstrap";
-
-
-function ContactUs() {
-
+import Header from "../components/Header";
+const ContactUs = () =>{
+  
   return (
+    
+  <div className="container border"
+  style={{marginTop:"5px",
+  width:"50%",
+  }}>
+    <Header />
+    <h1 style={{marginTop:"10%", marginLeft: "30%"}}>Contact Us</h1>
+    <form className="row" style={{margin:"25px 85px 75px 100px"}}>
+     <label>Your Name:</label>
+     <input type="text" name="name" className="form-control" />
 
+     <label>Your Email:</label>
+     <input type="email" name="user_email" className="form-control" />
 
-    <Form id="contact-form">
-      <Form.Group controlId="exampleForm.ControlInput1">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="name@example.com" />
-      </Form.Group>
-      <Form.Group controlId="exampleForm.ControlSelect1">
-        <Form.Label>Did You Get the Coronavirus Vaccine, or Are You Planning To?</Form.Label>
-        <Form.Control as="select">
-          <option>Please select</option>
-          <option>Yes</option>
-          <option>No</option>
-          <option>I'll get vaccined soon. </option>
-        </Form.Control>
-      </Form.Group>
-      <Form.Group controlId="exampleForm.ControlSelect2">
-
-      </Form.Group>
-      <Form.Group controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Message</Form.Label>
-        <Form.Control as="textarea" rows={3} />
-      </Form.Group>
-    </Form>
-
+     <label>Message:</label>
+     <textarea name="message" rows="4" className="form-control" />
+     <input type="Submit" value="Send" className="form-control btn btn-primary" style={{marginTop: "30px"}}/>
+    </form>
+  </div>
   );
-}
+};
 
 export default ContactUs;
