@@ -31,7 +31,7 @@ export default function TrackedLocationsAccordion({ usersFavorites, setUsersFavo
         });
         setUsersFavorites(updatedFavorites)
         setTracked(updatedFavorites)
-        await axios.delete(`http://localhost:3001/delete/${user.email}/${state}`)
+        await axios.delete(`${process.env.REACT_APP_HOST_URL}/delete/${user.email}/${state}`)
     }
 
     const getBackgrounColor = (int) => {

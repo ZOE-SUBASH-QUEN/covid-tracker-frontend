@@ -13,7 +13,7 @@ const LogoutButton = ({handleSetUsersFavorites}) => {
 
   const createUserInDbIfNeeded = async() =>{
     try{
-        await axios.get(`http://localhost:3001/user/${user?.email}`).then(result => {
+        await axios.get(`${process.env.REACT_APP_HOST_URL}/user/${user?.email}`).then(result => {
         console.log("result from db",result)  
         handleSetUsersFavorites(result.data[0])
         });
