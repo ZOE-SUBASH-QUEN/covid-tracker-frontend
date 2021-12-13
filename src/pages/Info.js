@@ -8,9 +8,11 @@ import {
   Marker,
   Annotation
 } from "react-simple-maps";
+import info_background_img from "../images/info_background_img.jpg";
 
 import allStates from "../data/allstates.json";
 import stateweb from "../data/stateweb.json";
+import { Row } from "react-bootstrap";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
 
@@ -48,9 +50,14 @@ const Info = () => {
     window.open(covid19Site, '_blank'); // opens https://api.covidtracking.com/v1/states/info.json
 
   }
+  
   return (
-    
-    <ComposableMap projection="geoAlbersUsa">
+   
+    <div  className= "info-content" style={{backgroundImage: `url(${info_background_img})`, backgroundSize: 'cover', width: '100vw',
+    height: '100%'}}>      
+        <Header />
+      <p>Please click letters on each state.  </p>
+    <ComposableMap projection="geoAlbersUsa" style={{ width: "75%", height: "auto", margin:"0, 10%,0,10%" }}>
       
       <Geographies geography={geoUrl}>
       
@@ -77,7 +84,7 @@ const Info = () => {
                     centroid[0] < -67 &&
                     (Object.keys(offsets).indexOf(cur.id) === -1 ? (
                       <Marker coordinates={centroid}>
-                        <text y="2" fontSize={14} textAnchor="middle">
+                        <text y="2" fontSize={14} textAnchor="middle" >
                           {cur.id}
                         </text>
                       </Marker>
@@ -99,6 +106,7 @@ const Info = () => {
         )}
       </Geographies>
     </ComposableMap>
+    </div>
   );
 };
 

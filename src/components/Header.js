@@ -20,17 +20,17 @@ export default function Header( { handleSetUsersFavorites }) {
       </img>
 
       <Nav className="justify-content-center" activeKey="/home">
-        <Nav.Item>
-          <Nav.Link href="/">Home</Nav.Link>
+        <Nav.Item >
+          <Nav.Link className="nav-item" href="/">Home</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/about">About</Nav.Link>
+          <Nav.Link className="nav-item" href="/about">About</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/info">Pandemic Resources & Information</Nav.Link>
+          <Nav.Link className="nav-item" href="/info">Pandemic Resources & Information</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/contactus">Contact us</Nav.Link>
+          <Nav.Link className="nav-item" href="/contactus">Contact us</Nav.Link>
         </Nav.Item>
       </Nav>
 
