@@ -60,11 +60,8 @@ export default function Body() {
      const isChanged = !_.isEqual(prevSelectedState, selectedState);
   
     useEffect(() => {
-        
         getDataFromAxios();
         getTimeSeriesData();
-           
-
     }, []);
 
     useEffect(() => {
@@ -74,7 +71,8 @@ export default function Body() {
     }, [isChanged]);
 
     const getDataFromAxios = async () => {
-        const dataFromAxios = await axios.get(`https://api.covidactnow.org/v2/states.json?apiKey=${process.env.REACT_APP_COVID_ACT_NOW_KEY}`).then(
+        const dataFromAxios = await axios
+        .get(`https://api.covidactnow.org/v2/states.json?apiKey=${process.env.REACT_APP_COVID_ACT_NOW_KEY}`).then(
             result => { setData(result.data) }
         )
     }
@@ -122,10 +120,6 @@ export default function Body() {
         setDisplayCharts(true)
 
     }
-
-    const handleImageClick = () => {
-        alert("image clicked");
-    };
 
     const handleSetUsersFavorites = (data) => {
         console.log(data.tracking)
@@ -185,10 +179,9 @@ export default function Body() {
                         <img
                             src={CovidFirstImage}
                             alt="First Covid 19"
-                            onClick={handleImageClick}
                         />
                         <div>
-                            <div>State: {selectedState[0].state}</div>
+                            <div className= "top-info">State: {selectedState[0].state}</div>
                             <div>Population: {selectedState[0].population}</div>
                             <div>New Cases: {selectedState[0].actuals.newCases}</div>
                             <div>Risk Levels: {selectedState[0].riskLevels?.overall}</div>
@@ -196,7 +189,6 @@ export default function Body() {
                         <img
                             src={CovidFirstImage}
                             alt="Second Covid 19"
-                            onClick={handleImageClick}
                         />
                     </div>
                 )}
@@ -209,14 +201,29 @@ export default function Body() {
                                        
                                     </div>
 
+                                    <div className="image-nav-single">
+                                        <img src={CovidFirstImage} alt="First Covid 19"/>
+                                    </div>
+
                                     <div id="chart2" className="chart-graph">
                                         <h2>New Deaths By Day</h2>
                                     
                                     </div>
+
+                                    <div className="image-nav-single">
+                                        <img src={CovidFirstImage} alt="First Covid 19"/>
+                                    </div>
+
                                     <div id="chart3" className="chart-graph">
                                         <h3> Case Density </h3>
 
                                     </div>
+
+                                    <div className="image-nav-single">
+                                        <img src={CovidFirstImage} alt="First Covid 19"/>
+                                    </div>
+
+                                    
                                     <div id="chart4" className="chart-graph">
                                         <h3>Vaccinations Completed Ratio</h3>
                                     </div>
@@ -224,20 +231,20 @@ export default function Body() {
 
                             }
                     </div>
-                <Container style={{width:"700px"}}>
+                <Container style={{width:"700px"}} className="top-info">
                     <Tabs defaultActiveKey="USA">
                         <Tab eventKey="USA" title="USA">
                             <div className="tracker-table" style={{ width: "800px", marginTop: '100px' }}>
                                 <Table striped bordered hover responsive="sm" style={{ width: "800px", margin: "auto" }}>
                                     <thead>
                                         <tr>
-                                            <th>State</th>
-                                            <th>Population</th>
-                                            <th onClick={() => handleSort('newCases')}>New Cases</th>
-                                            <th onClick={() => handleSort('newDeaths')}>New Deaths</th>
-                                            <th onClick={() => handleSort('transLevel')}>CDC Transmission Level</th>
-                                            <th onClick={() => handleSort('riskLevel')}>Risk Levels</th>
-                                            <th>Test Positivity Ratio</th>
+                                            <th className="table-heading">State</th>
+                                            <th className="table-heading">Population</th>
+                                            <th onClick={() => handleSort('newCases')} className="table-heading">New Cases</th>
+                                            <th onClick={() => handleSort('newDeaths')} className="table-heading">New Deaths</th>
+                                            <th onClick={() => handleSort('transLevel')} className="table-heading">CDC Transmission Level</th>
+                                            <th onClick={() => handleSort('riskLevel')} className="table-heading">Risk Levels</th>
+                                            <th className="table-heading">Test Positivity Ratio</th>
                                             <th>&nbsp;</th>
                                         </tr>
                                     </thead>

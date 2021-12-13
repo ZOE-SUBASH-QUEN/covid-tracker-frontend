@@ -19,7 +19,7 @@ export default function Header( { handleSetUsersFavorites }) {
         alt="Second Covid 19">
       </img>
 
-      <Nav className="justify-content-center" activeKey="/home">
+      <Nav className="justify-content-center mainHeaderNav" activeKey="/home">
         <Nav.Item>
           <Nav.Link href="/">Home</Nav.Link>
         </Nav.Item>
