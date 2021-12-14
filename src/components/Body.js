@@ -111,7 +111,7 @@ export default function Body() {
     let dataToGiveCharts = chartData.filter(
       (obj) => obj.state === selectedState[0]?.state
     );
-    console.log(selectedState);
+   
 
     //INFECTION RATE DATA (#1)
     const metricDataToGiveCharts =
