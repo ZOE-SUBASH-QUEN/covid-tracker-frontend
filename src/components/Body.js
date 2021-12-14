@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import _ from "lodash";
 import {ListGroup, ListGroupItem} from "react-bootstrap";
-import stateflag from "../data/stateflag.json";
+import stateflag from "../../src/data/stateflag.json";
 import {
   Table,
   Button,
