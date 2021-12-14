@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import _ from "lodash";
 import {ListGroup, ListGroupItem} from "react-bootstrap";
-import stateflag from "../../src/data/stateflag.json";
+import stateflag from "../data/stateflag.json";
 import {
   Table,
   Button,
@@ -179,6 +179,7 @@ export default function Body() {
 
     const stateFlagObject = stateflag.find(state => state.code === selectedState[0].state );
     setStateFlagURL(stateFlagObject?.state_flag_url)
+    console.log(stateFlagObject?.state_flag_url)
     setDisplayCharts(true);
   };
 
@@ -283,7 +284,7 @@ export default function Body() {
                   overflowY: "scroll",
                   height: "80%",
                   width: "40vw",
-                  marginTop: "10vh",
+                  marginTop: "0vh",
                 }}
               >
                 <div id="chart1" className="chart-graph">
