@@ -146,7 +146,7 @@ export default function Body() {
     );
 
     //CASE DENSITY DATA (#3)
-    console.log("data", metricDataToGiveCharts);
+    
     const caseDensitySeries = metricDataToGiveCharts?.map(
       (obj) => obj.caseDensity
     );
@@ -174,9 +174,9 @@ export default function Body() {
   };
 
   const handleSetUsersFavorites = (data) => {
-    console.log(data.tracking);
+   
     let unique = data.tracking.filter(onlyUnique); //remove duplicates from errors in database
-    console.log(unique);
+   
     setUsersFavorites(unique);
   };
 
