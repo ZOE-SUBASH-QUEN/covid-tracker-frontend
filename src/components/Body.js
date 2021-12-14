@@ -239,7 +239,7 @@ export default function Body() {
           <div>
             {!displayCharts && (
               <>
-                <Jumbotron style={{width: "40vw"}}>
+                <Jumbotron style={{ width: "40vw" }}>
                   <h2 className="banner-heading">Welcome to Covid-19 Tracker App</h2>
                   <img
                     src={CovidImage}
@@ -381,13 +381,15 @@ export default function Body() {
               <Tab eventKey="world" title="World">
                 World Data
               </Tab>
-              <Tab eventKey="tracked" title="My Tracked Locations">
-                <TrackedLocationsAccordion
-                  usersFavorites={usersFavorites}
-                  setUsersFavorites={setUsersFavorites}
-                  data={data}
-                />
-              </Tab>
+              {isAuthenticated &&
+                <Tab eventKey="tracked" title="My Tracked Locations">
+                  <TrackedLocationsAccordion
+                    usersFavorites={usersFavorites}
+                    setUsersFavorites={setUsersFavorites}
+                    data={data}
+                  />
+                </Tab>
+              }
             </Tabs>
           </Container>
         </div>
