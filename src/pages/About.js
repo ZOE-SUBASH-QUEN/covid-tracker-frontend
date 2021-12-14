@@ -3,7 +3,7 @@ import "../App.css";
 import Header from "../components/Header";
 import { Carousel, Jumbotron, Container, Row, Col, Button } from 'react-bootstrap'
 import Zoe from '../images/faces/zoe.jpg'
-import Quen from '../images/faces/quen.jpeg'
+import Quen from '../images/faces/quen.jpg'
 import Subash from '../images/faces/subash.png'
 
 function About() {
