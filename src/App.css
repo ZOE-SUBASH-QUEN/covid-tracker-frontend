@@ -148,8 +148,9 @@ table thead {
 }
 
 .image-nav .card {
-  font-weight: bold;
-  background: none;
+  font-weight: 1200px;
+  background-color: #fff;
+ margin-left: 10px;
   border: 1px solid transparent;
 }
 
@@ -243,6 +244,7 @@ footer {
   animation: App-logo-spin infinite 20s linear;
 }
 
+
 .live-link:link,
 .live-link:visited,
 .live-link:hover,
@@ -250,3 +252,4 @@ footer {
   color: #fff;
   margin-left: 1rem;
 }
+

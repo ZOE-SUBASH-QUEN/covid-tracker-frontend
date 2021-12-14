@@ -5,6 +5,8 @@ import TrackButton from "./TrackButton";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import _ from "lodash";
+import {ListGroup, ListGroupItem} from "react-bootstrap";
+import stateflag from "../data/stateflag.json";
 import {
   Table,
   Button,
@@ -42,6 +44,7 @@ export default function Body() {
   const [selectedState, setSelectedState] = useState({});
   const [displayCharts, setDisplayCharts] = useState(false);
   const [chartData, setChartData] = useState([]);
+  const [stateFlagURL, setStateFlagURL] = useState("");
   const [infectionRateChartData, setInfectionRateChartData] = useState({});
   const [newDeathsData, setNewDeathsData] = useState({});
   const [caseDensityData, setCaseDensityData] = useState({});
@@ -114,7 +117,7 @@ export default function Body() {
     let dataToGiveCharts = chartData.filter(
       (obj) => obj.state === selectedState[0]?.state
     );
-    console.log(selectedState);
+
 
     //INFECTION RATE DATA (#1)
     const metricDataToGiveCharts =
@@ -149,7 +152,7 @@ export default function Body() {
     );
 
     //CASE DENSITY DATA (#3)
-    console.log("data", metricDataToGiveCharts);
+    
     const caseDensitySeries = metricDataToGiveCharts?.map(
       (obj) => obj.caseDensity
     );
@@ -173,13 +176,16 @@ export default function Body() {
       labels: labels,
       series: vaccinationsCompletedSeries,
     });
+
+    const stateFlagObject = stateflag.find(state => state.code === selectedState[0].state );
+    setStateFlagURL(stateFlagObject?.state_flag_url)
     setDisplayCharts(true);
   };
 
   const handleSetUsersFavorites = (data) => {
-    console.log(data.tracking);
+   
     let unique = data.tracking.filter(onlyUnique); //remove duplicates from errors in database
-    console.log(unique);
+   
     setUsersFavorites(unique);
   };
 
@@ -236,11 +242,13 @@ export default function Body() {
       <div>
         {displayCharts && (
           <div className="image-nav">
-            <Card>
-              <div className="top-info">State: {selectedState[0].state}</div>
-              <div>Population: {selectedState[0].population}</div>
-              <div>New Cases: {selectedState[0].actuals.newCases}</div>
-              <div>Risk Levels: {selectedState[0].riskLevels?.overall}</div>
+           <Card border="dark" style={{ width: '18rem', borderRadius:"5px", borderColor:"#212529", fontSize:"20px", fontStyle:"italic", fontWeight:"bold"}}>
+              <Card.Img variant="top" src={stateFlagURL} />
+              
+             <ListGroup className="list-group-flush">
+                 <ListGroupItem><div className="top-info">State: {selectedState[0].state}</div> </ListGroupItem>
+                 
+              </ListGroup> 
             </Card>
           </div>
         )}
@@ -248,6 +256,7 @@ export default function Body() {
           <div>
             {!displayCharts && (
               <>
+
                 <Jumbotron style={({ width: "50vw"}, { margin: "20px" })}>
                   <h2 className="banner-heading">
                     Welcome to Covid-19 Tracker App
@@ -256,6 +265,7 @@ export default function Body() {
                     Please click to row in the right side of the table to find
                     out more information of Each States.
                   </p>
+
                   <img
                     className="img-covid"
                     src={CovidImage}
@@ -294,8 +304,11 @@ export default function Body() {
           </div>
           <Container
             style={{ width: "700px", marginRight: "10%", height: "125vh" }}
-            className="top-info" >
-            <Tabs defaultActiveKey="USA">
+
+            className="top-info"
+          >
+            <Tabs  defaultActiveKey="USA" style={{width:"800px", height:"5%", fontWeight:"bold", fontSize: "20px",borderRadius:"5px", color:"white", border:"solid 1px blue", backgroundColor:"#012169"}}>
+
               <Tab eventKey="USA" title="USA">
                 <div
                   className="tracker-table"
@@ -396,13 +409,15 @@ export default function Body() {
               <Tab eventKey="world" title="World">
                 World Data
               </Tab>
-              <Tab eventKey="tracked" title="My Tracked Locations">
-                <TrackedLocationsAccordion
-                  usersFavorites={usersFavorites}
-                  setUsersFavorites={setUsersFavorites}
-                  data={data}
-                />
-              </Tab>
+              {isAuthenticated &&
+                <Tab eventKey="tracked" title="My Tracked Locations">
+                  <TrackedLocationsAccordion
+                    usersFavorites={usersFavorites}
+                    setUsersFavorites={setUsersFavorites}
+                    data={data}
+                  />
+                </Tab>
+              }
             </Tabs>
           </Container>
         </div>
