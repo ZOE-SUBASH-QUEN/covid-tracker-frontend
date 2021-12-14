@@ -14,9 +14,7 @@ function TrackButton({ obj, tracked, setUsersFavorites, handleSetUsersFavorites 
 
         })
     }
-
-
-
+    
     return (
 
         <Button variant={tracked ? "info" : "outline-light"} className="m-2" onClick={tracked ? handleTrackClick : null}>

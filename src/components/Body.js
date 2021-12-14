@@ -25,6 +25,7 @@ import CovidImage from "../images/covid-image.png";
 function usePrevious(value) {
   // The ref object is a generic container whose current property is mutable ...
   // ... and can hold any value, similar to an instance property on a class
+
   //useRef returns a mutable ref object.
   const ref = useRef();
   // Store current value in ref
@@ -49,6 +50,8 @@ export default function Body() {
   );
   const [usersFavorites, setUsersFavorites] = useState([]);
   const prevSelectedState = usePrevious(selectedState);
+
+  // defining 4 states for 4 columns to sort by default in ascending order
   const [sortNewCases, setSortNewCases] = useState("asc");
   const [sortNewDeaths, setSortNewDeaths] = useState("asc");
   const [sortTransLevel, setSortTransLevel] = useState("asc");
@@ -197,8 +200,14 @@ export default function Body() {
     let sortOrder = "asc";
     switch (column) {
       case "newCases":
+        // get sortNewCases state value and change it to desc if asc and vice-versa
+        // set state is asynchronous so we're storing the state change in a variable to acces the updated value of sortOrder in setData function
         sortOrder = sortNewCases === "asc" ? "desc" : "asc";
         setSortNewCases(sortOrder);
+        //lodash has two methods sortBy and OrderBy
+        //sortBy method cannnot provide both ascending and descending properties
+        // orderBy returns new sorted array based on the property and sort order provided
+        // like _.orderBy(data, 'nested_propertyname', 'asc or desc');
         setData(_.orderBy(data, "actuals.newCases", sortOrder));
         break;
       case "newDeaths":
@@ -239,9 +248,16 @@ export default function Body() {
           <div>
             {!displayCharts && (
               <>
-                <Jumbotron style={{width: "40vw"}}>
-                  <h2 className="banner-heading">Welcome to Covid-19 Tracker App</h2>
+                <Jumbotron style={({ width: "50vw"}, { margin: "20px" })}>
+                  <h2 className="banner-heading">
+                    Welcome to Covid-19 Tracker App
+                  </h2>
+                  <p className="more-info">
+                    Please click to row in the right side of the table to find
+                    out more information of Each States.
+                  </p>
                   <img
+                    className="img-covid"
                     src={CovidImage}
                     alt="Covid Image"
                     className="side-image"
@@ -278,8 +294,7 @@ export default function Body() {
           </div>
           <Container
             style={{ width: "700px", marginRight: "10%", height: "125vh" }}
-            className="top-info"
-          >
+            className="top-info" >
             <Tabs defaultActiveKey="USA">
               <Tab eventKey="USA" title="USA">
                 <div

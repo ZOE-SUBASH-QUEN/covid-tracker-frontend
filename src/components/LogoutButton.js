@@ -24,7 +24,7 @@ const LogoutButton = ({handleSetUsersFavorites}) => {
 }
 
   return (
-    <Button variant="outline-danger" onClick={() => logout({ returnTo: window.location.origin })} style={{position:"relative",left:"25%"}}>
+    <Button variant="outline-warning" onClick={() => logout({ returnTo: window.location.origin })} style={{position:"relative",left:"25%"}}>
       Log Out
     </Button>
   );

@@ -14,6 +14,13 @@
   }
 }
 
+.more-info {
+  padding: 10px;
+  margin: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -42,8 +49,8 @@
   padding: 20px;
 }
 
-.header-image img {
-  border: 0;
+.img-covid {
+  margin-top: -85%;
 }
 
 .top-info {
@@ -234,4 +241,12 @@ footer {
   width: 250px;
   height: 250px;
   animation: App-logo-spin infinite 20s linear;
+}
+
+.live-link:link,
+.live-link:visited,
+.live-link:hover,
+.live-link:active {
+  color: #fff;
+  margin-left: 1rem;
 }

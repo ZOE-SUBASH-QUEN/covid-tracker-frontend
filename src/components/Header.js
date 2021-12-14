@@ -37,9 +37,12 @@ export default function Header( { handleSetUsersFavorites }) {
         <Nav.Item>
           <Nav.Link className="nav-item" href="/contactus">Contact Us</Nav.Link>
         </Nav.Item>
+        <Nav.Item>
+          <Nav.Link>{isAuthenticated? <LogoutButton handleSetUsersFavorites={handleSetUsersFavorites} /> : <LoginButton />}</Nav.Link>
+        </Nav.Item>  
       </Nav>
 
-      {isAuthenticated? <LogoutButton handleSetUsersFavorites={handleSetUsersFavorites} /> : <LoginButton />}
+      
       
 
     </header>
