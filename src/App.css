@@ -38,12 +38,34 @@
   }
 }
 
+.header-image {
+  padding: 20px;
+}
+
+.header-image img {
+  border: 0;
+}
+
 .top-info {
   margin-top: 10px;
 }
 
 .table-heading {
   background-color: #d11948;
+  color: #fff;
+}
+
+.mainHeaderNav {
+  background: #d11948;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mainHeaderNav a {
+  display: block;
+  padding: 17px;
+  font-size: 18px;
+  font-weight: bold;
   color: #fff;
 }
 
@@ -60,6 +82,24 @@
 
 .tracker-table tr {
   cursor: pointer;
+}
+
+.image-name {
+  padding: 5px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 17px;
+}
+
+.about-text {
+  text-align: justify;
+  text-justify: inter-word;
+  margin: 35px;
+}
+
+.about-content {
+  font-size: 17px;
+  font-style: italic;
 }
 
 table thead {
@@ -80,18 +120,10 @@ table thead {
 }
 
 .chart-graph {
-  margin: 1rem;;
+  margin: 1rem;
 }
 
 .image-nav {
-  width: 80%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.image-nav-single {
   width: 80%;
   margin: auto;
   display: flex;
@@ -99,24 +131,41 @@ table thead {
   align-items: center;
 }
 
-.image-nav img, 
-.image-nav-single img {
-  width: 100px;
-  height: 100px;
-  animation: App-logo-spin infinite 20s linear;
+.banner-heading {
+  background: #d11948;
+  color: #fff;
 }
 
+.top-header {
+  overflow: hidden;
+}
 
-nav{
+.image-nav .card {
+  font-weight: bold;
+  background: none;
+  border: 1px solid transparent;
+}
+
+.map-subtitle {
+  text-align: center;
+}
+.map-subtitle p {
+  color: #000000;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 25px;
+}
+
+nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height:10vh;
+  min-height: 10vh;
   /* background-color: rgb(73,79,82); */
-  color:white;
+  color: white;
 }
 
-.nav-links{
+.nav-links {
   width: 50%;
   display: flex;
   justify-content: space-around;
@@ -133,11 +182,10 @@ svg {
   vertical-align: middle;
 }
 
-#contact-form{
+#contact-form {
   width: 50%;
-  margin-left:25%;
+  margin-left: 25%;
 }
-
 
 /* ----  STYLING FOR CHARTIST ---- */
 .ct-series-a .ct-line {
@@ -162,7 +210,11 @@ svg {
 #chart2,
 #chart3,
 #chart4 {
-  background-color: #a9bcd0;
+  background-color: #fff;
+}
+
+.info-content svg {
+  margin-top: -95px;
 }
 
 footer {
@@ -172,25 +224,14 @@ footer {
   color: #fff;
 }
 
-footer ul {
-  margin-left: 0px;
-  padding-left: 0px;
-}
-
-footer a {
-  color: #fff;
-}
-
-footer li {
-  list-style: none;
-  color: #fff;
-  cursor: pointer;
-  margin: 20px;
-}
-
-
-.info-content{
+.info-content {
   color: #fff;
   font-size: 20px;
 }
 
+.side-image {
+  margin-top: 3rem;
+  width: 250px;
+  height: 250px;
+  animation: App-logo-spin infinite 20s linear;
+}

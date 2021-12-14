@@ -14,13 +14,15 @@ export default function Header( { handleSetUsersFavorites }) {
   const title = `COVID-19 Tracker`;
   return (
     <header>
-      <img
+      <div className="top-header">
+      <img className="header-image"
         src={covid19logo}
         alt="Second Covid 19">
       </img>
+    </div>
 
 
-      <Nav className="justify-content-center" activeKey="/home">
+      <Nav className="justify-content-center mainHeaderNav" activeKey="/home">
         <Nav.Item >
           <Nav.Link className="nav-item" href="/">Home</Nav.Link>
 
@@ -33,7 +35,7 @@ export default function Header( { handleSetUsersFavorites }) {
           <Nav.Link className="nav-item" href="/info">Pandemic Resources & Information</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link className="nav-item" href="/contactus">Contact us</Nav.Link>
+          <Nav.Link className="nav-item" href="/contactus">Contact Us</Nav.Link>
         </Nav.Item>
       </Nav>
 
