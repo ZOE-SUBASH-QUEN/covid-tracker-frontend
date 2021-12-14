@@ -12,9 +12,9 @@ export default function TrackedLocationsAccordion({ usersFavorites, setUsersFavo
     const { user, isAuthenticated, isLoading } = useAuth0();
 
     useEffect(() => {
-        console.log("data IN TRACKED LOCATIONS", data)
+        
         if (usersFavorites.length > 0) {
-            console.log(usersFavorites.length)
+            
             setTracked(usersFavorites)
             setTrackedData(data)
             setDisplayCards(true)
@@ -54,7 +54,7 @@ export default function TrackedLocationsAccordion({ usersFavorites, setUsersFavo
     const filterTrackedData = () => {
         let result = trackedData.map((obj, indx) => {
             if (tracked.includes(obj.state)) {
-                console.log(obj)
+                
                 return (<Card>
                     <Card.Header >
                         <Accordion.Toggle style={{ backgroundColor: "#6c757d" }} as={Card.Header} eventKey={String(indx)}>
@@ -97,7 +97,7 @@ export default function TrackedLocationsAccordion({ usersFavorites, setUsersFavo
                                 <Popover id="1a">
                                     <Popover.Title as="h3">Overall</Popover.Title>
                                     <Popover.Content>
-                                        Overall COVID-19 of selected location
+                                        Overall COVID-19 risk of selected location
                                     </Popover.Content>
                                 </Popover>
                             }>
@@ -111,7 +111,7 @@ export default function TrackedLocationsAccordion({ usersFavorites, setUsersFavo
                                 <Popover id="2a">
                                     <Popover.Title as="h3">Case Density</Popover.Title>
                                     <Popover.Content>
-                                    The number of cases per 100k population calculated using a 7-day rolling average
+                                    The number of cases per 100k people. Calculated using a 7-day rolling average
                                     </Popover.Content>
                                 </Popover>
                             }>
@@ -125,7 +125,7 @@ export default function TrackedLocationsAccordion({ usersFavorites, setUsersFavo
                                 <Popover id="3a">
                                     <Popover.Title as="h3">Test Positivity Ratio</Popover.Title>
                                     <Popover.Content>
-                                        Ratio of people who test positive calculated using a 7-day rolling average
+                                        Ratio of people who test positive. Calculated using a 7-day rolling average
                                     </Popover.Content>
                                 </Popover>
                             }>
